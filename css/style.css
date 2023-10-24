@@ -134,9 +134,40 @@ a.sidebar__link {
   width: 100%;
 }
 
+.theme-toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  background: var(--bs-body-color);
+}
+
+html[data-bs-theme="dark"] .theme-toggle .fa-sun,
+html[data-bs-theme="light"] .theme-toggle .fa-moon {
+  cursor: pointer;
+  padding: 10px;
+  display: block;
+  font-size: 1.25rem;
+  color: #fff;
+}
+html[data-bs-theme="dark"] .theme-toggle .fa-moon {
+  display: none;
+}
+html[data-bs-theme="light"] .theme-toggle .fa-sun {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .content {
     max-width: auto;
     width: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar,
+  footer {
+    width: 100vw;
   }
 }
